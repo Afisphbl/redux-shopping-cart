@@ -13,7 +13,11 @@ function Footer() {
               essentials.
             </p>
             <div className="footer-socials">
-              <a href="#" aria-label="Github">
+              <button
+                type="button"
+                aria-label="Github"
+                className="footer-social-button"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -31,8 +35,8 @@ function Footer() {
   11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"
                   />
                 </svg>
-              </a>
-              <a href="#" aria-label="Twitter">
+              </button>
+              <button aria-label="Twitter">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -42,8 +46,8 @@ function Footer() {
                 >
                   <path d="M18.244 2H21.5l-7.19 8.21L22 22h-6.828l-5.35-7.007L3.5 22H.244l7.69-8.79L2 2h6.828l4.83 6.35L18.244 2zm-1.197 18h1.886L7.026 3.88H5.003L17.047 20z" />
                 </svg>
-              </a>
-              <a href="#" aria-label="Instagram">
+              </button>
+              <button href="#" aria-label="Instagram">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -59,8 +63,8 @@ function Footer() {
                   <path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z" />
                   <circle cx="17.5" cy="6.5" r="1.25" />
                 </svg>
-              </a>
-              <a href="#" aria-label="Linkedin">
+              </button>
+              <button href="#" aria-label="Linkedin">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -74,7 +78,7 @@ function Footer() {
   6.1V24h-3.98v-7.9c0-1.88-.03-4.3-2.62-4.3-2.62 0-3.02 2.05-3.02 4.16V24H8.5V8z"
                   />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
 

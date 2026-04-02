@@ -21,6 +21,18 @@ function ProductDetail() {
     };
     dispatch(addToCart(item, quantity));
   }
+
+  if (!product) {
+    return (
+      <div className="page-product-details">
+        <Link to="/" className="btn btn-ghost">
+          <ArrowLeft size={20} />
+          Back
+        </Link>
+        <div className="product-not-found">Product Not Found</div>
+      </div>
+    );
+  }
   return (
     <div className="page-product-details">
       <Link to="/" className="btn btn-ghost">

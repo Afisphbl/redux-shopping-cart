@@ -22,7 +22,7 @@ function CartPage() {
   );
 
   return (
-    <div className="cart-page">
+    <div className="page-cart">
       <button className="btn" onClick={() => navigate(-1)}>
         <ArrowLeft size={20} />
         Back
