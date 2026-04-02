@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { products } from "../../data/products";
 import "./ProductList.css";
 import ProductCard, { ProductCardSkeleton } from "../ProductCard/ProductCard";
@@ -7,9 +7,12 @@ function ProductList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setLoading(false);
     }, 2000);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   if (loading) {

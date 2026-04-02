@@ -24,10 +24,16 @@ function Navbar({ theme }) {
         <div
           className={`navbar-links ${isMenuOpen ? "navbar-links-open" : ""}`}
         >
-          <NavLink to="/" className="nav-link">
+          <NavLink
+            to="/"
+            className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
+          >
             Home
           </NavLink>
-          <NavLink to="/cart" className="nav-link">
+          <NavLink
+            to="/cart"
+            className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
+          >
             Cart
           </NavLink>
         </div>

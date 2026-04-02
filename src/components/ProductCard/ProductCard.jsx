@@ -2,7 +2,7 @@ import React from "react";
 import "./ProductCard.css";
 import { ShoppingCart } from "lucide-react";
 
-function ProductCard({ id, title, price, image, description }) {
+function ProductCard({ title, price, image }) {
   return (
     <div className="product-card">
       <div className="product-image-wrapper">
