@@ -15,6 +15,9 @@ function Navbar({ theme }) {
           <button
             className="navbar-menu-button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="navbar-links"
           >
             <Menu size={24} />
           </button>
@@ -22,6 +25,7 @@ function Navbar({ theme }) {
         </div>
 
         <div
+          id="navbar-links"
           className={`navbar-links ${isMenuOpen ? "navbar-links-open" : ""}`}
         >
           <NavLink
@@ -42,6 +46,7 @@ function Navbar({ theme }) {
           <button
             className="icon-button"
             onClick={() => dispatch(toggleTheme())}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
           >
             {theme === "dark" ? (
               <SunIcon size={24} color="#fff" />
@@ -49,7 +54,7 @@ function Navbar({ theme }) {
               <MoonIcon size={24} />
             )}
           </button>
-          <button className="cart-button">
+          <button className="cart-button" aria-label="View shopping cart">
             <ShoppingCart size={24} />
             <span className="cart-badge">0</span>
           </button>
