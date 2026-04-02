@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, MoonIcon, SunIcon, ShoppingCart } from "lucide-react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../features/themeSlice";
+import cartSelector from "../../features/cartSelector";
 
 function Navbar({ theme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { carts } = useSelector(cartSelector);
+  const cartItemsCount = carts.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
   const dispatch = useDispatch();
   return (
     <header className="navbar">
@@ -40,7 +46,9 @@ function Navbar({ theme }) {
           <button
             className="icon-button"
             onClick={() => dispatch(toggleTheme())}
-            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
           >
             {theme === "dark" ? (
               <SunIcon size={24} color="#fff" />
@@ -48,10 +56,16 @@ function Navbar({ theme }) {
               <MoonIcon size={24} />
             )}
           </button>
-          <button className="cart-button" aria-label="View shopping cart">
+          <Link
+            to="/cart"
+            className="cart-button"
+            aria-label="View shopping cart"
+          >
             <ShoppingCart size={24} />
-            <span className="cart-badge">0</span>
-          </button>
+            {cartItemsCount > 0 && (
+              <span className="cart-badge">{cartItemsCount}</span>
+            )}
+          </Link>
         </div>
       </div>
     </header>

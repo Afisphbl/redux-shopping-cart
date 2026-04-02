@@ -199,6 +199,7 @@ input {
   justify-content: center;
   cursor: pointer;
   transition: all 0.18s ease;
+  color: var(--color-text);
 }
 
 .icon-button:hover {

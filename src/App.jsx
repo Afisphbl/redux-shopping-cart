@@ -4,6 +4,7 @@ import { AppRouter } from "./router/AppRouter";
 import { useSelector } from "react-redux";
 import { themeSelector } from "./features/themeSelector";
 import { useEffect } from "react";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const theme = useSelector(themeSelector);
@@ -18,6 +19,7 @@ function App() {
         <main className="app-main">
           <AppRouter />
         </main>
+        <Footer />
       </BrowserRouter>
     </article>
   );
